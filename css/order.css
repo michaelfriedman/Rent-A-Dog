@@ -1,0 +1,45 @@
+.card .card-title {
+  font-size: 1.7vw;
+}
+
+media only screen and (max-width 992px) {
+  .card .card-title {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .card .card-title {
+    font-size: 4.5vw;
+  }
+}
+
+.card .card-action a:not(.btn-large):not(.btn-floating):hover {
+  color: #f48fb1;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #e91e63;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #e91e63;
+  box-shadow: 0 1px 0 0 #e91e63;
+}
+
+.input-field .prefix.active {
+  color: #e91e63;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color #e91e63;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #e91e63;
+  box-shadow: 0 1px 0 0 #e91e63;
+}
+
+.brand-logo, .button-collapse {
+  margin-left: 10px;
+}
