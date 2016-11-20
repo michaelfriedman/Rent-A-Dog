@@ -1,11 +1,10 @@
 h1 {
   font-size: 5rem;
   font-weight: 700;
-  margin-top: 0;
 }
 
 header {
-  background: url(/img/hero.jpg);
+  background: url(/img/db.jpg);
   background-size: cover;
   flex-direction: column;
   height: 450px;
