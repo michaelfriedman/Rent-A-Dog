@@ -42,9 +42,7 @@
 
     item.name = $cardContent.children('.card-title').text();
     item.price = parseFloat($cardContent.children('p').text().slice(1));
-
     items.push(item);
-
     calcOrder();
     event.preventDefault();
   });
