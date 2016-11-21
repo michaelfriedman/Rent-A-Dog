@@ -1,4 +1,4 @@
-(function() {
+(function () {
   'use strict';
 
   $('.button-collapse').sideNav();
@@ -9,10 +9,8 @@
   const $tax = $('#tax');
   const $total = $('#total');
 
-  const calcOrder = function() {
+  const calcOrder = function () {
     let subtotal = 0;
-    let tax;
-    let total;
     const $tablerow = $('<tr>');
     const $dogNameCell = $('<td>');
     const $priceCell = $('<td>');
@@ -27,13 +25,11 @@
       subtotal += item.price;
     }
 
-    tax = subtotal *.0975;
-    total = subtotal + tax;
+    const tax = subtotal * 0.0975;
+    const total = subtotal + tax;
     $subtotal.text(`$${subtotal.toFixed(2)}`);
     $tax.text(`$${tax.toFixed(2)}`);
-    console.log($tax.text())
     $total.text(`$${total.toFixed(2)}`);
-
   };
 
   calcOrder();
@@ -59,12 +55,10 @@
     if (!value.length) {
       $target.removeClass('valid');
       $target.removeClass('invalid');
-    }
-    else if (value.trim() === '') {
+    } else if (value.trim() === '') {
       $target.removeClass('valid');
       $target.addClass('invalid');
-    }
-    else {
+    } else {
       $target.removeClass('invalid');
       $target.addClass('valid');
     }
