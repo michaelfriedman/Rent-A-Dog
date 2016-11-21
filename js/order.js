@@ -11,8 +11,6 @@
 
   const calcOrder = function() {
     let subtotal = 0;
-    let tax;
-    let total;
     const $tablerow = $('<tr>');
     const $dogNameCell = $('<td>');
     const $priceCell = $('<td>');
@@ -27,13 +25,12 @@
       subtotal += item.price;
     }
 
-    tax = subtotal *.0975;
-    total = subtotal + tax;
+    const tax = subtotal * 0.0975;
+    const total = subtotal + tax;
+
     $subtotal.text(`$${subtotal.toFixed(2)}`);
     $tax.text(`$${tax.toFixed(2)}`);
-    console.log($tax.text())
     $total.text(`$${total.toFixed(2)}`);
-
   };
 
   calcOrder();
