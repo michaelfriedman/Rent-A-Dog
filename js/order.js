@@ -3,11 +3,12 @@
 
   $('.button-collapse').sideNav();
 
-  const items = [];
+  const dogs = [];
   const $tbody = $('tbody');
   const $subtotal = $('#subtotal');
   const $tax = $('#tax');
   const $total = $('#total');
+  const profileData = [];
 
   const calcOrder = function() {
     let subtotal = 0;
@@ -15,14 +16,14 @@
     const $dogNameCell = $('<td>');
     const $priceCell = $('<td>');
 
-    for (const item of items) {
-      $dogNameCell.text(item.name);
-      $priceCell.text(`$${item.price.toFixed(2)}`);
+    for (const dog of dogs) {
+      $dogNameCell.text(dog.name);
+      $priceCell.text(`$${dog.price.toFixed(2)}`);
       $priceCell.addClass('right-align');
       $tablerow.append($dogNameCell);
       $tablerow.append($priceCell);
       $tbody.append($tablerow);
-      subtotal += item.price;
+      subtotal += dog.price;
     }
 
     const tax = subtotal * 0.0975;
@@ -35,17 +36,37 @@
 
   calcOrder();
 
-  $('.addItem').on('click', (event) => {
-    const item = {};
+  $('.addDog').on('click', (event) => {
+    const dog = {};
     const $target = $(event.target);
     const $cardContent = $target.parent().siblings('.card-content');
 
-    item.name = $cardContent.children('.card-title').text();
-    item.price = parseFloat($cardContent.children('p').text().slice(1));
-    items.push(item);
+    dog.name = $cardContent.children('.card-title').text();
+    dog.price = parseFloat($cardContent.children('p').text().slice(1));
+    dogs.push(dog);
     calcOrder();
     event.preventDefault();
   });
+
+  function Customer(name, email, phoneNumber, address) {
+    this.name = name;
+    this.email = email;
+    this.phoneNumber = phoneNumber;
+    this.address = address;
+  }
+
+  const getUserData = (event) => {
+    event.preventDefault();
+    const customerName = event.target.name.value;
+    const email = event.target.email.value;
+    const phoneNumber = event.target.phone_number.value;
+    const address = event.target.address.value
+    const newCustomer = new Customer(customerName, email, phoneNumber, address);
+    const jsonCustomer = JSON.stringify(newCustomer);
+    localStorage.setItem('customerProfile', jsonCustomer);
+  }
+
+  $('form').on('submit', getUserData);
 
   $('#name, #phone_number, #address').on('blur', (event) => {
     const $target = $(event.target);
@@ -66,15 +87,11 @@
   });
 
   $('#placeOrder').on('click', (event) => {
-    if (!items.length) {
+    if (!dogs.length) {
       Materialize.toast('Please add a dog to your oder.', 4000);
 
       return;
     }
-
-    const $name = $('#name');
-    const $phoneNumber = $('#phone_number');
-    const $address = $('#address');
 
     if ($name.val().trim() === '') {
       Materialize.toast('Please enter a name.', 4000);

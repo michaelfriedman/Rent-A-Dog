@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="card-action">
-                  <a href="#" class="addItem">Add to order</a>
+                  <a href="#" class="addDog">Add to order</a>
                 </div>
               </div>
             </div>
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="card-action">
-                  <a href="#" class="addItem">Add to order</a>
+                  <a href="#" class="addDog">Add to order</a>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@
                   <p>$50/day</p>
                 </div>
                 <div class="card-action">
-                  <a href="#" class="addItem">Add to order</a>
+                  <a href="#" class="addDog">Add to order</a>
                 </div>
               </div>
             </div>
@@ -100,7 +100,7 @@
                   <p>$89/daily</p>
                 </div>
                 <div class="card-action">
-                  <a href="#" class="addItem">Add to order</a>
+                  <a href="#" class="addDog">Add to order</a>
                 </div>
               </div>
             </div>
@@ -136,12 +136,19 @@
             </tfoot>
           </table>
 
-          <form class="col s12">
+          <form id='form' class="col s12">
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
                 <input id="name" type="text">
                 <label for="name" data-error="required">Name</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">email</i>
+                <input id="email" type="text">
+                <label for="email" data-error="required">Email</label>
               </div>
             </div>
             <div class="row">
@@ -160,7 +167,7 @@
             </div>
             <div class="row">
               <div class="col s12 center">
-                <a id="placeOrder" class="waves-effect waves-light btn-large pink acdent-2">Place Order</a>
+                <button id="submit" type="submit" class="waves-effect waves-light btn-large pink acdent-2" name="button">Place Order</button>
               </div>
             </div>
           </form>
