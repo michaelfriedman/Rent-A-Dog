@@ -44,7 +44,6 @@
     dog.price = parseFloat($cardContent.children('p').text().slice(1));
     dogs.push(dog);
     calcOrder();
-    event.preventDefault();
   });
 
   function Customer(name, email, phoneNumber, address) {
@@ -58,17 +57,46 @@
     event.preventDefault();
     const customerName = event.target.name.value;
     const email = event.target.email.value;
-    const phoneNumber = event.target.phone_number.value;
-    const address = event.target.address.value
+    const phoneNumber = event.target.phoneNumber.value;
+    const address = event.target.address.value;
     const newCustomer = new Customer(customerName, email, phoneNumber, address);
     const jsonCustomer = JSON.stringify(newCustomer);
+
     localStorage.setItem('customerProfile', jsonCustomer);
-  }
+    if (!dogs.length) {
+      Materialize.toast('Please add a dog to your order.', 4000);
+
+      return;
+    }
+    if ($('#name').val().trim() === '') {
+      Materialize.toast('Please enter a name.', 4000);
+
+      return;
+    }
+    if ($('#email').val().trim() === '') {
+      Materialize.toast('Please enter an email.', 4000);
+
+      return;
+    }
+    if ($('#phoneNumber').val().trim() === '') {
+      Materialize.toast('Please enter a phone number.', 4000);
+
+      return;
+    }
+    if ($('#address').val().trim === '') {
+      Materialize.toast('Please type an address.', 4000);
+
+      return;
+    }
+    Materialize.toast('Order placed. Thank you!', 4000);
+    $tbody.empty();
+    $('form').find('input[type=text], textarea').val('');
+  };
 
   $('form').on('submit', getUserData);
 
   (function() {
-    if (localStorage) {
+    if (localStorage.length) {
       const customerProfile =
       JSON.parse(localStorage.getItem('customerProfile'));
 
@@ -95,41 +123,5 @@
       $target.removeClass('invalid');
       $target.addClass('valid');
     }
-  });
-
-  $('#submit').on('click', (event) => {
-    if (!dogs.length) {
-      Materialize.toast('Please add a dog to your oder.', 4000);
-
-      return;
-    }
-
-    if ($('#name').val().trim() === '') {
-      Materialize.toast('Please enter a name.', 4000);
-
-      return;
-    }
-
-    if ($('#email').val().trim() === '') {
-      Materialize.toast('Please enter an email.', 4000);
-
-      return;
-    }
-
-    if ($('#phoneNumber').val().trim() === '') {
-      Materialize.toast('Please enter a phone number.', 4000);
-
-      return;
-    }
-
-    if ($('#address').val().trim === '') {
-      Materialize.toast('Please type an address.', 4000);
-
-      return;
-    }
-
-    Materialize.toast('Order placed. Thank you!', 4000);
-    $tbody.empty();
-    event.preventDefault();
   });
 })();
