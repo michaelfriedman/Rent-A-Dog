@@ -113,7 +113,7 @@
 
     if (!value.length) {
       $target.removeClass('valid');
-      $target.removeClass('invalid');
+      $target.addClass('invalid');
     }
     else if (value.trim() === '') {
       $target.removeClass('valid');

@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rent-A-Dog</title>
     <script defer src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-      <script defer src="js/order.js"></script>
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-      <link type="text/css" rel="stylesheet" href="css/order.css"/>
-      <title>Rent-A-Dog</title>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script defer src="js/order.js"></script>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="css/order.css"/>
   </head>
   <body>
     <div class="navbar-fixed">
@@ -39,44 +39,43 @@
             <h4>Dog Menu</h4>
 
             <div class="row">
-              <div class="col 12 m12 l6">
-              <div class="card">
-                <div class="card-image">
-                  <img src="img/corsopup.jpg" alt="Cane Corso Puppy" />
-                </div>
+              <div class="col s12 m12 l6">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="img/corsopup.jpg" alt="Cane Corso Puppy" />
+                  </div>
 
-                <div class="card-content">
-                  <span class="card-title">Cane Corso Puppy</span>
-                  <p>$150/daily</p>
-                </div>
+                  <div class="card-content">
+                    <span class="card-title">Cane Corso Puppy</span>
+                    <p>$150/daily</p>
+                  </div>
 
-                <div class="card-action">
-                  <a href="#" class="addDog">Add to order</a>
+                  <div class="card-action">
+                    <a href="#" class="addDog">Add to order</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s12 m12 l6">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="img/dogoArgentino.jpg" alt="Dogo Argentino" />
+                  </div>
+
+                  <div class="card-content">
+                    <span class="card-title">Dogo Argentino</span>
+                    <p>$115/daily</p>
+                  </div>
+
+                  <div class="card-action">
+                    <a href="#" class="addDog">Add to order</a>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="col 12 m12 l6">
-              <div class="card">
-                <div class="card-image">
-                  <img src="img/dogoArgentino.jpg" alt="Dogo Argentino" />
-                </div>
-
-                <div class="card-content">
-                  <span class="card-title">Dogo Argentino</span>
-                  <p>$115/daily</p>
-
-                </div>
-
-                <div class="card-action">
-                  <a href="#" class="addDog">Add to order</a>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div class="row">
-            <div class="col 12 m12 l6">
+            <div class="col s12 m12 l6">
               <div class="card">
                 <div class="card-image">
                   <img src="img/pitbullcat.jpg" alt="Pit Bull with Cat" />
@@ -91,7 +90,7 @@
               </div>
             </div>
 
-            <div class="col 12 m12 l6">
+            <div class="col s12 m12 l6">
               <div class="card">
                 <div class="card-image">
                   <img src="img/neamastiff.jpg" alt="Neapolitan Mastiff" />
@@ -156,14 +155,14 @@
               <div class="input-field col s12">
                 <i class="material-icons prefix">phone</i>
                 <input id="phoneNumber" type="text">
-                <label for="phoneNumber" data-error="requried">Phone Number</label>
+                <label for="phoneNumber" data-error="required">Phone Number</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
                 <i class="material-icons prefix">business</i>
                 <input id="address" type="text">
-                <label for="address" data-error="requried">Address</label>
+                <label for="address" data-error="required">Address</label>
               </div>
             </div>
             <div class="row">
@@ -177,42 +176,42 @@
     </div>
   </main>
 
-  <footer class="page-footer light-blue accent-3">
-    <div class="container">
-      <div class="row">
-        <div class="col s12 m6">
-          <h5 class="white-text">Rent-A-Dog</h5>
-          <p class="grey-text text-lighten-4">
-            Fine Dogs, Delivered.
-          </p>
-        </div>
-
-        <div class="col s12 m4 offset-m2">
-          <ul>
-            <li>
-              <a class="grey-text text-lighten-3" href="index.html">
-                Home
-              </a>
-            </li>
-
-            <li>
-              <a class="grey-text text-lighten-3" href="order.html">
-                Order A Dog
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright light-blue accent-4">
+    <footer class="page-footer light-blue accent-3">
       <div class="container">
         <div class="row">
-          <div class="col s12">
-            © 2016 Rent-A-Dog Inc.
+          <div class="col s12 m6">
+            <h5 class="white-text">Rent-A-Dog</h5>
+            <p class="grey-text text-lighten-4">
+              Fine Dogs, Delivered.
+            </p>
+          </div>
+
+          <div class="col s12 m4 offset-m2">
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="index.html">
+                  Home
+                </a>
+              </li>
+
+              <li>
+                <a class="grey-text text-lighten-3" href="order.html">
+                  Order A Dog
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+      <div class="footer-copyright light-blue accent-4">
+        <div class="container">
+          <div class="row">
+            <div class="col s12">
+              © 2016 Rent-A-Dog Inc.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

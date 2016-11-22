@@ -2,7 +2,7 @@
   font-size: 1.7vw;
 }
 
-media only screen and (max-width 992px) {
+@media only screen and (max-width 992px) {
   .card .card-title {
     font-size: 3vw;
   }
@@ -32,7 +32,7 @@ media only screen and (max-width 992px) {
 }
 
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color #e91e63;
+  color: #e91e63;
 }
 
 textarea.materialize-textarea:focus:not([readonly]) {
