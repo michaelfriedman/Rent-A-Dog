@@ -83,8 +83,8 @@
 
       return;
     }
-    if ($('#address').val().trim === '') {
-      Materialize.toast('Please type an address.', 4000);
+    if ($('#address').val().trim() === '') {
+      Materialize.toast('Please enter an address.', 4000);
 
       return;
     }
