@@ -22,3 +22,9 @@ main {
 .brand-logo, .button-collapse {
   margin-left: 20px;
 }
+
+#welcome {
+  position: absolute;
+  top: 75px;
+  left: 35px;
+}

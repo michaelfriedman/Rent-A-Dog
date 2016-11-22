@@ -8,7 +8,6 @@
   const $subtotal = $('#subtotal');
   const $tax = $('#tax');
   const $total = $('#total');
-  const profileData = [];
 
   const calcOrder = function() {
     let subtotal = 0;
@@ -68,6 +67,18 @@
 
   $('form').on('submit', getUserData);
 
+  (function() {
+    if (localStorage) {
+      const customerProfile =
+      JSON.parse(localStorage.getItem('customerProfile'));
+
+      $('#welcome').text(`Welcome back ${customerProfile.name}!`);
+    }
+    else {
+      return;
+    }
+  })();
+
   $('#name, #phone_number, #address').on('blur', (event) => {
     const $target = $(event.target);
     const value = $target.val();
@@ -86,26 +97,32 @@
     }
   });
 
-  $('#placeOrder').on('click', (event) => {
+  $('#submit').on('click', (event) => {
     if (!dogs.length) {
       Materialize.toast('Please add a dog to your oder.', 4000);
 
       return;
     }
 
-    if ($name.val().trim() === '') {
+    if ($('#name').val().trim() === '') {
       Materialize.toast('Please enter a name.', 4000);
 
       return;
     }
 
-    if ($phoneNumber.val().trim() === '') {
+    if ($('#email').val().trim() === '') {
+      Materialize.toast('Please enter an email.', 4000);
+
+      return;
+    }
+
+    if ($('#phoneNumber').val().trim() === '') {
       Materialize.toast('Please enter a phone number.', 4000);
 
       return;
     }
 
-    if ($address.val().trim === '') {
+    if ($('#address').val().trim === '') {
       Materialize.toast('Please type an address.', 4000);
 
       return;
