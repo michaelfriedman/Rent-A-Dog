@@ -43,7 +43,3 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .brand-logo, .button-collapse {
   margin-left: 10px;
 }
-
-#welcome {
-  padding-left: 200px;
-}
