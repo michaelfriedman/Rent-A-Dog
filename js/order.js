@@ -90,6 +90,9 @@
     }
     Materialize.toast('Order placed. Thank you!', 4000);
     $tbody.empty();
+    $subtotal.text('$0.00');
+    $tax.text('$0.00');
+    $total.text('$0.00');
     $('form').find('input[type=text], textarea').val('');
   };
 
@@ -101,9 +104,6 @@
       JSON.parse(localStorage.getItem('customerProfile'));
 
       $('#welcome').text(`Welcome back ${customerProfile.name}!`);
-    }
-    else {
-      return;
     }
   })();
 
