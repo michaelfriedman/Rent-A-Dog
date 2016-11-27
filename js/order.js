@@ -46,23 +46,30 @@
     calcOrder();
   });
 
-  function Customer(name, email, phoneNumber, address) {
-    this.name = name;
-    this.email = email;
-    this.phoneNumber = phoneNumber;
-    this.address = address;
-  }
+  const proto = {
+    customer: () => {
+      name;
+      email;
+      address;
+    }
+  };
+
+  const factoryCustomer = () => {
+    return Object.create(proto);
+  };
 
   const getUserData = (event) => {
     event.preventDefault();
-    const customerName = event.target.name.value;
-    const email = event.target.email.value;
-    const phoneNumber = event.target.phoneNumber.value;
-    const address = event.target.address.value;
-    const newCustomer = new Customer(customerName, email, phoneNumber, address);
-    const jsonCustomer = JSON.stringify(newCustomer);
+    const orderingCustomer = factoryCustomer();
 
-    localStorage.setItem('customerProfile', jsonCustomer);
+    orderingCustomer.name = event.target.name.value;
+    orderingCustomer.email = event.target.email.value;
+    orderingCustomer.address = event.target.address.value;
+    orderingCustomer.phonenNumber = event.target.phoneNumber.value;
+
+    const jsonOrderingCustomer = JSON.stringify(orderingCustomer);
+
+    localStorage.setItem('customerProfile', jsonOrderingCustomer);
     if (!dogs.length) {
       Materialize.toast('Please add a dog to your order.', 4000);
 
